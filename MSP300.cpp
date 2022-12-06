@@ -70,7 +70,7 @@ uint8_t MSP300::getAddress()
 //
 //  CALIBRATION
 //
-void MSP300::setPressureCounts(uint16_t Pmin = 1000, uint16_t Pmax = 15000)
+void MSP300::setPressureCounts(uint16_t Pmin, uint16_t Pmax)
 {
   _pressureFactor = 1.0 / (Pmax - Pmin);
 }
