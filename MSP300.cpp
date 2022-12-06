@@ -20,7 +20,7 @@ MSP300::MSP300(const uint8_t deviceAddress, TwoWire *wire)
 
 
 #if defined (ESP8266) || defined(ESP32)
-bool MSP300::begin(int dataPin, int clockPin, int value)
+bool MSP300::begin(int dataPin, int clockPin, int maxValue)
 {
   _wire = &Wire;
   if ((dataPin < 255) && (clockPin < 255))
@@ -30,17 +30,17 @@ bool MSP300::begin(int dataPin, int clockPin, int value)
     _wire->begin();
   }
   if (! isConnected()) return false;
-  _maxValue = value;
+  _maxValue = maxValue;
   return true;
 }
 #endif
 
 
-bool MSP300::begin(int value)
+bool MSP300::begin(int maxValue)
 {
   _wire->begin();
   if (! isConnected()) return false;
-  _maxValue = value;
+  _maxValue = maxValue;
   return true;
 }
 

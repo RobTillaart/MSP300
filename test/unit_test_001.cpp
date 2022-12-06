@@ -47,7 +47,7 @@ unittest(test_constructors)
   Wire.begin();
 
   MSP300 MSP(0x2C);
-  MSP.begin();
+  MSP.begin(100);
   //  assertEqual(0, MSP.read());
   assertEqual(1, 1);
 }
