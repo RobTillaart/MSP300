@@ -52,7 +52,7 @@ unittest(test_constructor)
   MSP300 MSP(0x28);
   MSP.begin(100);
   //  assertEqual(0, MSP.read());
-  assertEqual(MSP300_OK, lastError);
+  assertEqual(MSP300_OK, MSP.lastError());
 
   assertEqual(0, MSP.getStatus());
   assertEqual(0, MSP.getPressure());
@@ -70,7 +70,7 @@ unittest(test_PressureCount)
   assertEqual(1000, MSP.getPmin());
   assertEqual(15000, MSP.getPmax());
 
-  //  chaned values
+  //  changed values
   MSP.setPressureCounts(1012, 14980);
   assertEqual(1012, MSP.getPmin());
   assertEqual(14980, MSP.getPmax());
