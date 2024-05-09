@@ -11,10 +11,13 @@
 
 MSP300::MSP300(const uint8_t deviceAddress, TwoWire *wire)
 {
-  _address    = deviceAddress;
-  _wire       = wire;
-  _error      = MSP300_OK;
-  _maxValue   = 100;
+  _address     = deviceAddress;
+  _wire        = wire;
+  _error       = MSP300_OK;
+  _maxValue    = 100;
+  _pressure    = 0;
+  _temperature = 0;
+  _status      = MSP300_OK;
   setPressureCounts(1000, 15000);
 }
 
