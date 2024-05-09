@@ -122,7 +122,7 @@ void MSP300::_read(uint8_t bytes)
   for (int i= 0; i < bytes; i++)
   {
     _raw <<= 8;
-    _raw = _wire->read();
+    _raw |= _wire->read();
   }
 }
 
