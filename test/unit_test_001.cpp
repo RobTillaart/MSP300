@@ -41,7 +41,7 @@ unittest(test_constants)
   assertEqual(001, MSP300_RESERVED);
   assertEqual(002, MSP300_STALE_DATA);
   assertEqual(003, MSP300_READ_ERROR);
-  assertEqual(100, MSP300_ERROR);
+  assertEqual(100, MSP300_REQUEST_ERROR);
 }
 
 
